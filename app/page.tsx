@@ -45,27 +45,29 @@ const Home = async () => {
           <Image src="/banner.png" fill className="rounded-xl object-cover" alt="Agende nos melhores com FSW Barber" />
         </div>
       </div>
-
-      {/* Agendamento */}
+      <div className="p-5">
+        {/* Agendamento */} 
       <BookingItem />
 
-      <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">Recomendados</h2>
-      <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
-      {barbershops.map((barbershop) => (<BarbershopItem key={barbershop.id} barbershop={barbershop} />
-        ))}
-      </div>
+<h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">Recomendados</h2>
+<div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
+{barbershops.map((barbershop) => (<BarbershopItem key={barbershop.id} barbershop={barbershop} />
+  ))}
+</div>
 
-      <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">Populares</h2>
-      <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
-      {popularBarbershops.map((barbershop) => (<BarbershopItem key={barbershop.id} barbershop={barbershop} />
-        ))}
-      </div>
-      <Card className="mt-6">
-        <CardContent className="px-5 py-6">
-          <p className="text-sm text-gray-400">© 2023 Copyright <span className="font-bold">FSW Barber</span></p>
-        </CardContent>
-      </Card>
-    </div>
+<h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">Populares</h2>
+<div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
+{popularBarbershops.map((barbershop) => (<BarbershopItem key={barbershop.id} barbershop={barbershop} />
+  ))}
+</div>
+</div>
+<Card className="mt-6">
+  <CardContent className="px-5 py-6">
+    <p className="text-sm text-gray-400">© 2023 Copyright <span className="font-bold">FSW Barber</span></p>
+  </CardContent>
+</Card>
+</div>
+      
   );
 }
 
