@@ -3,9 +3,8 @@ import { Button } from "./button";
 import { CalendarIcon, HomeIcon, LogOutIcon, MenuIcon } from "lucide-react";
 import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetClose } from "./sheet";
 import { quickSearchOption } from "@/app/_constants/search";
-import { AvatarImage } from "@radix-ui/react-avatar";
-import { Avatar } from "./avatar";
 import Link from "next/link";
+import { Avatar, AvatarImage } from "./avatar";
 
 const SidebarButton = () => {
     return (  
