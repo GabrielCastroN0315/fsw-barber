@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Card, CardContent } from "./card";
 
-import SidebarButton from "./sidebar-button";
+import SidebarButton from "./sidebar-sheet";
 
 const Header = () => {
   return (

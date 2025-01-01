@@ -18,7 +18,7 @@ const BarbershopItem = ({ barbershop }: BarbershopItemProps) => (
             <div className="relative h-[159px] w-full">
                 <Image fill className="rounded-2xl object-cover" src={barbershop.imageUrl} alt="barbershop.name" />
                 <Badge className="absolute left-2 top-2 space-x-1" variant="secondary">
-                    <StarIcon size={12} className="fill-primary text-primary text-purple-900"/>
+                    <StarIcon size={12} className="text-primary fill-purple-700 text-purple-700"/>
                     <p className="text-xs font-semibold">5,0</p>
                 </Badge>
             </div>

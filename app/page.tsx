@@ -27,7 +27,7 @@ const Home = async () => {
         {/* Busca */}
         <div className="mt-6 flex items-center gap-2">
           <Input placeholder="Faça sua busca..." />
-          <Button>
+          <Button className=" bg-purple-700 text-white">
             <SearchIcon />
           </Button>
         </div>
