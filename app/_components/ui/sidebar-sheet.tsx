@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import { Button } from "./button";
 import { CalendarIcon, HomeIcon, LogInIcon, LogOutIcon, MenuIcon } from "lucide-react";
@@ -5,8 +7,17 @@ import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetClose 
 import { quickSearchOption } from "@/app/_constants/search";
 import Link from "next/link";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "./dialog";
+import { signIn } from "next-auth/react";
 
-const SidebarButton = () => {
+const SidebarSheet = () => {
+  const handleLoginWithGoogleClick = async () => {
+    try {
+      const result = await signIn("google");
+      if (!result) throw new Error("Erro ao iniciar o login");
+    } catch (error) {
+      console.error("Login falhou:", error);
+    }
+  };
     return (  
 
          <Sheet>
@@ -24,8 +35,8 @@ const SidebarButton = () => {
               <h2 className="font-bold">Olá, faça seu login!</h2>
               <Dialog>
                 <DialogTrigger asChild>
-                  <Button size="icon" className= "text-purple-700">
-                    <LogInIcon className="fill-purple-700"/> 
+                  <Button size="icon">
+                    <LogInIcon className="text-purple-700"/> 
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="w-[90%]">
@@ -35,7 +46,7 @@ const SidebarButton = () => {
             Conecte-se usando sua conta Goolge
           </DialogDescription>
           </DialogHeader>
-          <Button variant="outline" className="gap-1 font-bold">
+          <Button onClick={handleLoginWithGoogleClick} variant="outline" className="gap-1 font-bold">
               <Image alt="Fazer login com o Google" src="/google.svg" width={18} height={18} />
               Google
             </Button>
@@ -86,4 +97,4 @@ const SidebarButton = () => {
     );
 }
  
-export default SidebarButton ;
+export default SidebarSheet;

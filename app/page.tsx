@@ -7,6 +7,7 @@ import { db } from "./_lib/prisma";
 import BarbershopItem from "./_components/barbersop-item";
 import { quickSearchOption } from "./_constants/search";
 import BookingItem, * as bookingItem from "./_components/booking-item";
+import { Barbershop } from "@prisma/client/wasm";
 
 
 const Home = async () => {
@@ -50,13 +51,13 @@ const Home = async () => {
 
 <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">Recomendados</h2>
 <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
-{barbershops.map((barbershop) => (<BarbershopItem key={barbershop.id} barbershop={barbershop} />
+{barbershops.map((barbershop: Barbershop) => (<BarbershopItem key={barbershop.id} barbershop={barbershop} />
   ))}
 </div>
 
 <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">Populares</h2>
 <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
-{popularBarbershops.map((barbershop) => (<BarbershopItem key={barbershop.id} barbershop={barbershop} />
+{popularBarbershops.map((barbershop: Barbershop) => (<BarbershopItem key={barbershop.id} barbershop={barbershop} />
   ))}
 </div>
 </div>
